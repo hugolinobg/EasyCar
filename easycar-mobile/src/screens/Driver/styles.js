@@ -8,7 +8,13 @@ export default StyleSheet.create({
   },
 
   btn: {
-    margin: 10,
+    padding: 15,
+    borderBottomWidth: 1,
+    borderBottomColor: colorsTheme.gray2,
+  },
+
+  containerPassenger: {
+    flexDirection: 'row',
   },
 
   name: {

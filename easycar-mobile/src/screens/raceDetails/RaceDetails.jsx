@@ -7,7 +7,7 @@ import Button from '../../components/button/Button.jsx'
 
 import icons from '../../constants/icons/icons.js'
 
-const Passenger = (props) => {
+const RaceDetails = (props) => {
   const [myLocation, setMyLocation] = useState({
     latitude: -21.291154,
     longitude: -50.338904,
@@ -53,9 +53,9 @@ const Passenger = (props) => {
         </View>
       </View>
 
-      <Button text={'CONFIRMAR'} theme={'red'} />
+      <Button text={'ACEITAR'} theme={''} />
     </SafeAreaView>
   )
 }
 
-export default Passenger
+export default RaceDetails

@@ -1,11 +1,22 @@
-import { FlatList, SafeAreaView, Text, TouchableOpacity } from 'react-native'
+import {
+  FlatList,
+  Image,
+  SafeAreaView,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native'
 import styles from './styles.js'
 
-import Button from '../../components/Button/Button.jsx'
+import icons from '../../constants/icons/icons.js'
 
 import { json_rides } from '../../constants/data/data.js'
 
-const Driver = () => {
+const Driver = (props) => {
+  function handleDriver(id) {
+    props.navigation.navigate('RaceDetails')
+  }
+
   return (
     <SafeAreaView style={styles.container}>
       <FlatList
@@ -14,17 +25,23 @@ const Driver = () => {
         showsVerticalScrollIndicator={false}
         renderItem={({ item }) => {
           return (
-            <TouchableOpacity style={styles.btn}>
-              <Image />
-              <Text style={styles.name}>{item.passenger_name}</Text>
-              <Text style={styles.address}>Origem: {item.pickup_address}</Text>
+            <TouchableOpacity
+              style={styles.btn}
+              onPress={() => handleDriver(item.ride_id)}
+            >
+              <View style={styles.containerPassenger}>
+                <Image style={styles.car} source={icons.car} />
+                <Text style={styles.name}>{item.passenger_name}</Text>
+              </View>
 
-              <Text style={styles.address}>Destino: {item.pickup_date}</Text>
+              <Text style={styles.address}>Origem: {item.pickup_address}</Text>
+              <Text style={styles.address}>
+                Destino: {item.dropoff_address}
+              </Text>
             </TouchableOpacity>
           )
         }}
       />
-      <Button text={'Teste'} />
     </SafeAreaView>
   )
 }

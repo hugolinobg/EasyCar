@@ -1,9 +1,10 @@
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
-import Home from '../screens/Home/Home.jsx'
-import Passenger from '../screens/Passenger/Passenger.jsx'
-import Driver from '../screens/Driver/Driver.jsx'
+import Home from '../screens/home/Home.jsx'
+import Passenger from '../screens/passenger/Passenger.jsx'
+import Driver from '../screens/driver/Driver.jsx'
+import RaceDetails from '../screens/raceDetails/RaceDetails.jsx'
 
 const Stack = createNativeStackNavigator()
 
@@ -33,6 +34,16 @@ function Routes() {
           options={{
             headerTitle: 'Viagens Disponíveis',
             headerTitleAlign: 'center',
+          }}
+        />
+
+        <Stack.Screen
+          name="RaceDetails"
+          component={RaceDetails}
+          options={{
+            headerShownVisible: false,
+            headerTitle: '',
+            headerTransparent: true,
           }}
         />
       </Stack.Navigator>
