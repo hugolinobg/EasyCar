@@ -45,4 +45,10 @@ export default StyleSheet.create({
     margin: 5,
     padding: 10,
   },
+
+  loading: {
+    flex: 1,
+    alignContent: 'center',
+    justifyContent: 'center',
+  },
 })
